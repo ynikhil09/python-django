@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+  {% block postlistings %}
+    <li><a href="{% url 'post:post_new' %}" class="btn btn-simple">Create New</a></li>
+    <li><a href="{% url 'post:post_draft_list' %}" class="btn btn-simple">Drafts</a></li>
+  {% endblock postlistings %}
+
+{% block content %}
+
+{% block blogcss %}
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock blogcss %}
+
+<div class="container">
+  <div class="row">
+    {% block prepost %}{% endblock %}
+    {% block post_content %}{% endblock %}
+    {% block post_post %}{% endblock %}
+  </div>
+</div>
+
+{% endblock %}
