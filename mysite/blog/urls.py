@@ -1,5 +1,6 @@
 from django.conf.urls import url
 from . import views
+from . api import PostApi, CommentApi
 
 app_name = 'post'
 
@@ -15,4 +16,6 @@ urlpatterns = [
     url(r'^post/(?P<pk>\d+)/comment/$',views.add_comments_to_post, name='add_comments_to_post'),
     url(r'^comment/(?P<pk>\d+)/approve/$',views.comment_approve,name='comment_approve'),
     url(r'^comment/(?P<pk>\d+)/remove/$',views.comment_remove,name='comment_remove'),
+    url(r'^post$',PostApi.as_view()),
+    url(r'^comment$',CommentApi.as_view()),
 ]

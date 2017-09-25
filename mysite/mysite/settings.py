@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'blog',
     'accounts',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
